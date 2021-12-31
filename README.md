@@ -2,9 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
-**In this project we have eslint and prettier setup.
-
-Read about the setup at https://kumargandhi.in/2021/09/28/setup-eslint-and-prettier-in-angular-app/
+**In this project we have code samples for Angular and Bootstrap.
 
 ## Development server
 
