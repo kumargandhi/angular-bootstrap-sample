@@ -1,1 +1,30 @@
-<p>form works!</p>
+<div class="container-fluid p" id="page-container">
+    <h3>Form group and Form array</h3>
+    <form
+        class="needs-validation data-container"
+        [formGroup]="form"
+        [class.was-validated]="isFormSubmitted"
+    >
+        <div class="row">
+            <div class="col-md-1">Question:</div>
+            <div class="col-md-2">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="question"
+                    placeholder="Enter loan amount..."
+                    formControlName="question"
+                    [ngClass]="{
+                        'is-invalid':
+                            isFormSubmitted && form.controls['question'].errors
+                    }"
+                    required
+                />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Answer:</div>
+            <div class="col-md-2"></div>
+        </div>
+    </form>
+</div>
