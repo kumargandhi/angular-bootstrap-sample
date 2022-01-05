@@ -3,6 +3,7 @@
 @import './node_modules/bootstrap-icons/font/bootstrap-icons';
 @import 'assets/fonts/open-sans-fonts';
 @import 'assets/scss/variables';
+@import 'assets/scss/bootstrap_overrides';
 
 html,
 body {
@@ -20,21 +21,13 @@ body {
     padding: 0;
     height: 100vh;
     overflow-y: hidden;
-    background: #ededed;
+    background: $theme-gray-light;
 
     & > #page-title {
         background-color: inherit;
-        color: #3793ff;
+        color: $theme-gray-dark;
         margin: 0 !important;
         padding-right: 15px;
         padding-bottom: 15px;
     }
-
-    & > #page-title.gray {
-        background-color: #f5f5f5 !important;
-    }
-}
-
-.was-validated .form-control:invalid, .form-control.is-invalid {
-    background-image: unset;
 }

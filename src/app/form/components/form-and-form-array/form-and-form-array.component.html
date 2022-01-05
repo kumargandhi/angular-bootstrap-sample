@@ -1,0 +1,109 @@
+<form
+    class="needs-validation data-container question-answer-form"
+    [formGroup]="form"
+>
+    <div class="row pb-3">
+        <div class="col-md-1 text-end">Question:</div>
+        <div class="col-md-11">
+            <input
+                type="text"
+                class="form-control"
+                id="question"
+                placeholder="Enter question"
+                formControlName="question"
+                [ngClass]="{
+                    'is-invalid':
+                        isFormSubmitted && form.controls['question'].errors
+                }"
+                required
+            />
+            <div
+                class="invalid-feedback"
+                *ngIf="form.controls['question'].errors?.required"
+            >
+                Loan amount cannot be empty
+            </div>
+        </div>
+    </div>
+    <div
+        class="row pb-3"
+        formArrayName="options"
+        *ngFor="let option of optionsFormArray.controls; let i = index"
+    >
+        <ng-container [formGroupName]="i">
+            <div class="col-md-1 text-end">{{ i + 1 }})</div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-2 radio-clm">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            id="selected{{ i }}"
+                            value="selected{{ i }}"
+                            formControlName="selected"
+                            name="selected"
+                            (click)="optionClicked(i)"
+                        />
+                    </div>
+                    <div class="col-md-10">
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="answer"
+                            maxlength="255"
+                            placeholder="Enter option text"
+                        />
+                        <div
+                            *ngIf="
+                                getOptionsFormGroup(i).controls['answer']
+                                    .touched &&
+                                !getOptionsFormGroup(i).controls['answer'].valid
+                            "
+                            class="row text-danger mb-3"
+                        >
+                            <div
+                                class="col-md-12"
+                                *ngIf="
+                                    getOptionsFormGroup(i).controls['answer']
+                                        .errors?.required
+                                "
+                            >
+                                Option is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="">
+        <button
+            type="button"
+            class="btn btn-secondary float-start"
+            (click)="reset()"
+        >
+            Reset
+        </button>
+        <button
+            type="button"
+            class="btn btn-success float-end"
+            (click)="submit()"
+        >
+            Submit
+        </button>
+        <button
+            type="button"
+            class="btn btn-primary me-2 float-end"
+            (click)="addOption()"
+        >
+            Add Option
+        </button>
+        <button
+            type="button"
+            class="btn btn-primary me-2 float-end"
+            (click)="setDefault()"
+        >
+            Set default
+        </button>
+    </div>
+</form>
