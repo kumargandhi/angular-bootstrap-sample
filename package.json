@@ -9,7 +9,7 @@
         "test": "ng test",
         "lint": "eslint .",
         "lint:fix": "eslint --fix",
-        "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,html}' --config ./.prettierrc.json",
+        "prettier": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,html}' --config ./.prettierrc.json",
         "stylelint": "stylelint \"src/**/*.scss\"",
         "stylelint:fix": "stylelint \"src/**/*.scss\" --fix"
     },
