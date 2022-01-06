@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FormAndFormArrayComponent } from './form/components/form-and-form-array/form-and-form-array.component';
 import { FormValidationsComponent } from './form/components/form-validations/form-validations.component';
 import { SimpleFormComponent } from './form/components/simple-form/simple-form.component';
+import { HeaderComponent } from './commom/components/header/header.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { SimpleFormComponent } from './form/components/simple-form/simple-form.c
         FormAndFormArrayComponent,
         FormValidationsComponent,
         SimpleFormComponent,
+        HeaderComponent,
     ],
     imports: [
         BrowserModule,
