@@ -1,4 +1,11 @@
-<form class="needs-validation simple-form" [formGroup]="form">
+<form
+    class="needs-validation simple-form"
+    [formGroup]="form"
+    (ngSubmit)="onFormSubmit($event)"
+>
+    <div class="alert alert-info" role="alert" *ngIf="isFormSubmitted">
+        Form is submitted!.
+    </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
         <input
@@ -35,4 +42,9 @@
         >
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <p
+        class="lead border border-info p-3 mt-3"
+        *ngIf="isFormSubmitted"
+        [innerHTML]="formDesc"
+    ></p>
 </form>

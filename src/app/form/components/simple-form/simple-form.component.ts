@@ -2,9 +2,9 @@ import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
-    OnInit,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as _ from 'lodash';
 
 @Component({
     selector: 'app-simple-form',
@@ -12,10 +12,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     styleUrls: ['./simple-form.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SimpleFormComponent implements OnInit {
+export class SimpleFormComponent {
     form: FormGroup;
 
     isFormSubmitted = false;
+
+    formDesc: string;
 
     constructor(private _fb: FormBuilder, private _cd: ChangeDetectorRef) {
         this.form = this._fb.group({
@@ -25,5 +27,14 @@ export class SimpleFormComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {}
+    onFormSubmit($event: any) {
+        if (!$event) {
+            return;
+        }
+        this.isFormSubmitted = true;
+        this.formDesc = '';
+        _.forIn(this.form.controls, (value, key) => {
+            this.formDesc += `Control ${key} with value ${value.value}<br>`;
+        });
+    }
 }
