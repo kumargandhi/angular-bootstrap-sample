@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./form-validations.component.scss'],
 })
 export class FormValidationsComponent implements OnInit {
-    constructor() {}
+    constructor() {
+        // do nothing
+    }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // do nothing
+    }
 }

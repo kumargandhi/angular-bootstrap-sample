@@ -13,5 +13,7 @@ export class FormComponent implements OnInit {
     selectedTab = _.head(Object.values(FORM_TABS));
     tabs = Object.values(FORM_TABS);
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // do nothing
+    }
 }

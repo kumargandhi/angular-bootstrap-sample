@@ -38,14 +38,18 @@ export class FormAndFormArrayComponent implements OnInit {
         return this.form.get('options') as FormArray;
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // do nothing
+    }
 
     optionClicked(index: number) {
         this.selectedOption = index;
         this.isOptionSelected = true;
     }
 
-    reset() {}
+    reset() {
+        // do nothing
+    }
 
     addOption() {
         const options = this.form.get('options') as FormArray;

@@ -8,7 +8,11 @@ import { Header_Menu } from '../../constants';
 })
 export class HeaderComponent implements OnInit {
     readonly Header_Menu = Header_Menu;
-    constructor() {}
+    constructor() {
+        // do nothing for now
+    }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // do nothing for now
+    }
 }
