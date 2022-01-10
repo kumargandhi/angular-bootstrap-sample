@@ -21,10 +21,16 @@
                 class="invalid-feedback"
                 *ngIf="form.controls['question'].errors?.required"
             >
-                Loan amount cannot be empty
+                Question cannot be empty
             </div>
         </div>
     </div>
+    <h6
+        class="fw-bold"
+        *ngIf="optionsFormArray && optionsFormArray.controls.length > 0"
+    >
+        Options
+    </h6>
     <div
         class="row pb-3"
         formArrayName="options"
@@ -76,7 +82,7 @@
             </div>
         </ng-container>
     </div>
-    <div class="">
+    <div class="mt-5">
         <button
             type="button"
             class="btn btn-secondary float-start"

@@ -12,6 +12,13 @@ import {
     Validators,
 } from '@angular/forms';
 
+const DEFAULT_DATA = {
+    question:
+        'Which of the following numbers is farthest from the number 1 on the number line?',
+    options: ['0', '-5', '-10', '5', '10'],
+    answer: 2,
+};
+
 @Component({
     selector: 'app-form-and-form-array',
     templateUrl: './form-and-form-array.component.html',
@@ -64,16 +71,13 @@ export class FormAndFormArrayComponent implements OnInit {
         this.isFormSubmitted = true;
     }
 
-    setDefault() {
+    setDefault(data = DEFAULT_DATA) {
         const { question, options } = this.form.controls;
-        question.setValue(
-            'Which of the following numbers is farthest from the number 1 on the number line?'
-        );
-        const answers: string[] = ['0', '-5', '-10', '5', '10'];
-        const selectedOption = (this.selectedOption = 2);
+        question.setValue(data.question);
+        const selectedOption = (this.selectedOption = data.answer);
         this.isOptionSelected = true;
         (options as FormArray).clear();
-        answers.forEach((item) => {
+        data.options.forEach((item) => {
             const option = new FormGroup({
                 selected: new FormControl(),
                 answer: new FormControl(item, [Validators.required]),
