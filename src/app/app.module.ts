@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { FormValidationsComponent } from './form/components/form-validations/for
 import { SimpleFormComponent } from './form/components/simple-form/simple-form.component';
 import { HeaderComponent } from './commom/components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InfoComponent } from './commom/components/info/info.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormValidationsComponent,
         SimpleFormComponent,
         HeaderComponent,
+        InfoComponent,
     ],
     imports: [
         BrowserModule,
@@ -32,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         ReactiveFormsModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        ModalModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent],
