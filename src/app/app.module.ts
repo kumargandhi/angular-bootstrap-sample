@@ -12,6 +12,7 @@ import { FormAndFormArrayComponent } from './form/components/form-and-form-array
 import { FormValidationsComponent } from './form/components/form-validations/form-validations.component';
 import { SimpleFormComponent } from './form/components/simple-form/simple-form.component';
 import { HeaderComponent } from './commom/components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { HeaderComponent } from './commom/components/header/header.component';
         FormsModule,
         ReactiveFormsModule,
         AppRoutingModule,
+        BrowserAnimationsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
