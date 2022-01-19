@@ -11,3 +11,7 @@
 .nav-link {
     cursor: pointer;
 }
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active {
+    font-weight: bold;
+}

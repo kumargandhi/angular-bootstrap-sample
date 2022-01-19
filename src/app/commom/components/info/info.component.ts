@@ -12,5 +12,7 @@ export class InfoComponent implements OnInit {
 
     constructor(public bsModalRef: BsModalRef) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // do nothing
+    }
 }
