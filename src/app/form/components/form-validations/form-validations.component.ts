@@ -6,6 +6,8 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as _ from 'lodash';
+import { validateName } from '../../../commom/components/validators/name.validator';
+import { validateEmail } from '../../../commom/components/validators/email.validator';
 
 @Component({
     selector: 'app-form-validations',
@@ -22,9 +24,9 @@ export class FormValidationsComponent implements OnInit {
 
     constructor(private _fb: FormBuilder, private _cd: ChangeDetectorRef) {
         this.form = this._fb.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            username: ['', Validators.required],
+            firstName: ['', validateName('firstName', 'First name')],
+            lastName: ['', validateName('lastName', 'First name')],
+            username: ['', validateEmail('username', 'Username')],
             city: ['', Validators.required],
             state: ['', Validators.required],
             zip: ['', Validators.required],

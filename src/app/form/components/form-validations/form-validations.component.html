@@ -1,7 +1,8 @@
 <form
-    class="row g-3 needs-validation"
+    class="row g-3"
     novalidate
     [formGroup]="form"
+    [class.was-validated]="isFormSubmitted"
     (ngSubmit)="onFormSubmit($event)"
 >
     <div class="col-md-4">
@@ -12,8 +13,17 @@
             id="firstName"
             formControlName="firstName"
             required
+            [ngClass]="{
+                'is-invalid':
+                    isFormSubmitted && form.controls['firstName'].errors
+            }"
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div
+            class="invalid-feedback"
+            *ngIf="form.controls['firstName'].hasError('firstName')"
+        >
+            {{ form.controls['firstName'].errors?.firstName }}
+        </div>
     </div>
     <div class="col-md-4">
         <label for="lastName" class="form-label">Last name</label>
@@ -23,7 +33,17 @@
             id="lastName"
             formControlName="lastName"
             required
+            [ngClass]="{
+                'is-invalid':
+                    isFormSubmitted && form.controls['lastName'].errors
+            }"
         />
+        <div
+            class="invalid-feedback"
+            *ngIf="form.controls['lastName'].hasError('lastName')"
+        >
+            {{ form.controls['lastName'].errors?.lastName }}
+        </div>
     </div>
     <div class="col-md-4">
         <label for="username" class="form-label">Username</label>
@@ -36,8 +56,17 @@
                 aria-describedby="inputGroupPrepend"
                 formControlName="username"
                 required
+                [ngClass]="{
+                    'is-invalid':
+                        isFormSubmitted && form.controls['username'].errors
+                }"
             />
-            <div class="invalid-feedback">Please choose a username.</div>
+            <div
+                class="invalid-feedback"
+                *ngIf="form.controls['username'].hasError('username')"
+            >
+                {{ form.controls['username'].errors?.username }}
+            </div>
         </div>
     </div>
     <div class="col-md-4">
