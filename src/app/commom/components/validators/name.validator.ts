@@ -1,4 +1,4 @@
-import { AbstractControl, ValidatorFn } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
 export function validateName(fieldName = 'name', displayName = 'Name') {
     return (control: AbstractControl) => {
