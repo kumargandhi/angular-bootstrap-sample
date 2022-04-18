@@ -1,3 +1,15 @@
-<div class="container-fluid" id="page-container">
-    <h5 class="mb-3">Contains samples for Table ...</h5>
+<div class="container-fluid p-3" id="page-container">
+    <h6 id="page-title" class="mb-3">Contains samples for Tables ...</h6>
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item" *ngFor="let item of tabs">
+            <a
+                class="nav-link"
+                [class.active]="selectedTab === item"
+                (click)="selectedTab = item"
+            >
+                {{ item }}
+            </a>
+        </li>
+    </ul>
+    <app-simple-table *ngIf="selectedTab === TABLE_TABS.TABLE"></app-simple-table>
 </div>

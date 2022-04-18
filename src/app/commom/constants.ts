@@ -8,11 +8,11 @@ export const Header_Menu = [
         routerLink: ['form'],
     },
     {
-        label: 'Dropdown',
-        routerLink: ['dropdown'],
-    },
-    {
         label: 'Table',
         routerLink: ['table'],
+    },
+    {
+        label: 'Dropdown',
+        routerLink: ['dropdown'],
     },
 ];

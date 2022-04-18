@@ -15,6 +15,7 @@ import { SimpleFormComponent } from './form/components/simple-form/simple-form.c
 import { HeaderComponent } from './commom/components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfoComponent } from './commom/components/info/info.component';
+import { SimpleTableComponent } from './table/components/simple-table/simple-table.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { InfoComponent } from './commom/components/info/info.component';
         SimpleFormComponent,
         HeaderComponent,
         InfoComponent,
+        SimpleTableComponent,
     ],
     imports: [
         BrowserModule,
